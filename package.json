@@ -1,0 +1,22 @@
+{
+  "name": "jacqueline-smith-ecc-dssb-is21-code-challenge-req101408",
+  "version": "1.0.0",
+  "description": "Web application that tracks and manages web applications developed by the B.C. Ministry of Education and Child Care (ECC)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JSmith604/JACQUELINE-SMITH-ecc-dssb-IS21-code-challenge-req101408.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JSmith604/JACQUELINE-SMITH-ecc-dssb-IS21-code-challenge-req101408/issues"
+  },
+  "homepage": "https://github.com/JSmith604/JACQUELINE-SMITH-ecc-dssb-IS21-code-challenge-req101408#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
