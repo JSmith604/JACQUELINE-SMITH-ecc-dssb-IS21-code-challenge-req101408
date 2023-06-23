@@ -1,6 +1,9 @@
 const express = require('express');
+const cors = require('cors');
 const port = 3001; // Choose any available port number
 const app = express();
+
+app.use(cors());
 
 app.get('/', (req, res) => {
   res.send('Hello, World!');
