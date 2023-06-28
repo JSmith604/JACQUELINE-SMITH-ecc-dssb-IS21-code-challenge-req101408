@@ -1,8 +1,10 @@
+
 import React, { useState } from 'react';
 import { TextField, Button } from '@mui/material';
 
 function ProductFormComponent({ onAddEntry }) {
-  // State variables for each form field
+  // State variables for each form field, do not show form until user clicks call to action button
+  const [showForm, setShowForm] = useState(false);
   const [productName, setProductName] = useState('');
   const [productOwnerName, setProductOwnerName] = useState('');
   const [developers, setDevelopers] = useState('');
@@ -15,8 +17,6 @@ function ProductFormComponent({ onAddEntry }) {
   // Handle form submission
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    // Create form data object with the entered values
     const formData = {
       productName,
       productOwnerName,
@@ -27,13 +27,13 @@ function ProductFormComponent({ onAddEntry }) {
       lifecycleState,
       location,
     };
-
-    // Call the provided callback function to add the entry
+    
+    //Call the provided callback function to add the entry
     onAddEntry(formData);
     resetForm();
   };
 
-  //Reset the form fields
+  // Reset form fields
   const resetForm = () => {
     setProductName('');
     setProductOwnerName('');
@@ -45,60 +45,74 @@ function ProductFormComponent({ onAddEntry }) {
     setLocation('');
   };
 
+  const handleToggleForm = () => {
+    setShowForm(!showForm);
+  };
+
   return (
-    <form onSubmit={handleSubmit}>
-      <TextField
-        label="Product Name"
-        value={productName}
-        onChange={(e) => setProductName(e.target.value)}
-        required
-      />
-      <TextField
-        label="Product Owner Name"
-        value={productOwnerName}
-        onChange={(e) => setProductOwnerName(e.target.value)}
-        required
-      />
-      <TextField
-        label="Developers (comma-separated)"
-        value={developers}
-        onChange={(e) => setDevelopers(e.target.value)}
-        required
-      />
-      <TextField
-        label="Scrum Master Name"
-        value={scrumMasterName}
-        onChange={(e) => setScrumMasterName(e.target.value)}
-        required
-      />
-      <TextField
-        label="Start Date"
-        value={startDate}
-        onChange={(e) => setStartDate(e.target.value)}
-        required
-      />
-      <TextField
-        label="Methodology"
-        value={methodology}
-        onChange={(e) => setMethodology(e.target.value)}
-        required
-      />
-      <TextField
-        label="Lifecycle State"
-        value={lifecycleState}
-        onChange={(e) => setLifecycleState(e.target.value)}
-        required
-      />
-      <TextField
-        label="Location"
-        value={location}
-        onChange={(e) => setLocation(e.target.value)}
-        required
-      />
-      <Button variant="contained" type="submit">Add Entry</Button>
-    </form>
+    <div>
+      {!showForm && (
+        <Button variant="contained" onClick={handleToggleForm}>
+          Add New
+        </Button>
+      )}
+      {showForm && (
+        <form onSubmit={handleSubmit}>
+          <TextField
+            label="Product Name"
+            value={productName}
+            onChange={(e) => setProductName(e.target.value)}
+            required
+          />
+          <TextField
+            label="Product Owner Name"
+            value={productOwnerName}
+            onChange={(e) => setProductOwnerName(e.target.value)}
+            required
+          />
+          <TextField
+            label="Developers (comma-separated)"
+            value={developers}
+            onChange={(e) => setDevelopers(e.target.value)}
+            required
+          />
+          <TextField
+            label="Scrum Master Name"
+            value={scrumMasterName}
+            onChange={(e) => setScrumMasterName(e.target.value)}
+            required
+          />
+          <TextField
+            label="Start Date"
+            value={startDate}
+            onChange={(e) => setStartDate(e.target.value)}
+            required
+          />
+          <TextField
+            label="Methodology"
+            value={methodology}
+            onChange={(e) => setMethodology(e.target.value)}
+            required
+          />
+          <TextField
+            label="Lifecycle State"
+            value={lifecycleState}
+            onChange={(e) => setLifecycleState(e.target.value)}
+            required
+          />
+          <TextField
+            label="Location"
+            value={location}
+            onChange={(e) => setLocation(e.target.value)}
+            required
+          />
+          <Button variant="contained" type="submit">
+            Add Entry
+          </Button>
+        </form>
+      )}
+    </div>
   );
 }
 
 export default ProductFormComponent;
-

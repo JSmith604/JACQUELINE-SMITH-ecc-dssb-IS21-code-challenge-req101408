@@ -9,11 +9,6 @@ import ProductFormComponent from './components/ProductFormComponent';
 function App() {
   const [data, setData] = useState([]);
 
- //function to calculate the total number of products
-  function getTotalProductsCount(data) {
-    return data.length;
-  }
-
   //fetch data from the server on component mount
   useEffect(() => {
     fetchData();
