@@ -4,7 +4,6 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import ListComponent from './components/ListComponent';
 import TableComponent from './components/TableComponent';
-import AddButton from './components/AddButtonComponent';
 import ProductFormComponent from './components/ProductFormComponent';
 
 
@@ -52,7 +51,6 @@ function App() {
     <div>
       <h1>BC Government Ministry of Education and Child Care</h1>
       <ListComponent totalProductsCount={data.length}/>
-      <AddButton onClick={handleAddEntry} />
       <ProductFormComponent onAddEntry={handleAddEntry} />
       {data.length > 0 ? (
         <TableComponent data={data} />
