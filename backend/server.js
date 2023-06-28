@@ -4,7 +4,7 @@ const port = 3001; // Choose any available port number
 const app = express();
 const mockData = require('./data/mockData');
 const bodyParser = require('body-parser');
-//app.use(cors());
+app.use(cors());
 app.use(express.json());
 
 app.get('/', (req, res) => {
