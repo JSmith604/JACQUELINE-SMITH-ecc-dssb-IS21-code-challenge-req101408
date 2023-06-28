@@ -8,6 +8,7 @@ const mockData = {
       scrumMasterName: "Elijah Ramirez",
       startDate: "2023/06/27",
       methodology: "Agile",
+      lifecycleState: "Marked for modernization",
       location: "https://github.com/bcgov/nr-spar"
     },
     {
@@ -18,6 +19,7 @@ const mockData = {
       scrumMasterName: "Lucas Hughes",
       startDate: "2023/07/01",
       methodology: "Waterfall",
+      lifecycleState: "In development",
       location: "https://github.com/bcgov/CIOT"
     },
   ]

@@ -27,7 +27,8 @@ function App() {
               <TableCell>Developers</TableCell>
               <TableCell>Scrum Master Name</TableCell>
               <TableCell>Start Date</TableCell>
-              <TableCell>methodology</TableCell>
+              <TableCell>Methodology</TableCell>
+              <TableCell>Life Cycle State</TableCell>
               <TableCell>Location</TableCell>
             </TableRow>
           </TableHead>
@@ -47,6 +48,7 @@ function App() {
                 <TableCell>{product.scrumMasterName}</TableCell>
                 <TableCell>{product.startDate}</TableCell>
                 <TableCell>{product.methodology}</TableCell>
+                <TableCell>{product.lifecycleState}</TableCell>
                 <TableCell>{product.location}</TableCell>
               </TableRow>
             ))}
