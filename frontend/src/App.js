@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import '@mui/material/styles';
 import { Table, TableHead, TableRow, TableCell, TableBody } from '@mui/material';
+import ListComponent from './components/ListComponent';
 
 function App() {
   const [data, setData] = useState('');
@@ -17,6 +18,7 @@ function App() {
   return (
     <div>
       <h1>Data from Backend:</h1>
+      <ListComponent/>
       {data.length > 0 ? (
         <Table>
           <TableHead>
