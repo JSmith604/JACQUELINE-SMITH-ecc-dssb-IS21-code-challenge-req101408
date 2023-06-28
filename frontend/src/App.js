@@ -29,6 +29,8 @@ function App() {
       });
   };
 
+  window.onload = fetchData;
+
   const totalProductsCount = getTotalProductsCount(data);
 
   const handleAddEntry = (newEntry) => {
