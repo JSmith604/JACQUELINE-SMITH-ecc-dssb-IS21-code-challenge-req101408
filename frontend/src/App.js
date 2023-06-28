@@ -47,7 +47,7 @@ function App() {
                 <TableCell>{product.scrumMasterName}</TableCell>
                 <TableCell>{product.startDate}</TableCell>
                 <TableCell>{product.methodology}</TableCell>
-                {product.location}
+                <TableCell>{product.location}</TableCell>
               </TableRow>
             ))}
           </TableBody>
