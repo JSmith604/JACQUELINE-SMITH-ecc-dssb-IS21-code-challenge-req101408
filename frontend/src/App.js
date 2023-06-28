@@ -5,6 +5,10 @@ import axios from 'axios';
 import ListComponent from './components/ListComponent';
 import TableComponent from './components/TableComponent';
 
+function getTotalProductsCount(data) {
+  return data.length;
+}
+
 function App() {
   const [data, setData] = useState([]);
 
@@ -15,10 +19,12 @@ function App() {
       .catch(error => console.error(error));
   }, []);
 
+  const totalProductsCount = getTotalProductsCount(data);
+
   return (
     <div>
-      <h1>Data from Backend:</h1>
-      <ListComponent />
+      <h1>BC Government Ministry of Education and Child Care</h1>
+      <ListComponent totalProductsCount={totalProductsCount}/>
       {data.length > 0 ? (
         <TableComponent data={data} />
       ) : (

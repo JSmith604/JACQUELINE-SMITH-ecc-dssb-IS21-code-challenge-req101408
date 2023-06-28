@@ -1,16 +1,12 @@
 import React from 'react';
 import { List, ListItem, ListItemText } from '@mui/material';
 
-function ListComponent() {
+function ListComponent({ totalProductsCount }) {
   return (
     <List>
       <ListItem>
-        <ListItemText primary="List Item 1" />
+        <ListItemText primary={`Total Products: ${totalProductsCount}`} />
       </ListItem>
-      <ListItem>
-        <ListItemText primary="List Item 2" />
-      </ListItem>
-      {/* Add more ListItems as needed */}
     </List>
   );
 }
