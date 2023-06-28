@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { TextField, Button } from '@mui/material';
 
 function ProductFormComponent({ onAddEntry }) {
+  // State variables for each form field
   const [productName, setProductName] = useState('');
   const [productOwnerName, setProductOwnerName] = useState('');
   const [developers, setDevelopers] = useState('');
@@ -11,9 +12,11 @@ function ProductFormComponent({ onAddEntry }) {
   const [lifecycleState, setLifecycleState] = useState('');
   const [location, setLocation] = useState('');
 
+  // Handle form submission
   const handleSubmit = (e) => {
     e.preventDefault();
 
+    // Create form data object with the entered values
     const formData = {
       productName,
       productOwnerName,
@@ -25,10 +28,12 @@ function ProductFormComponent({ onAddEntry }) {
       location,
     };
 
+    // Call the provided callback function to add the entry
     onAddEntry(formData);
     resetForm();
   };
 
+  //Reset the form fields
   const resetForm = () => {
     setProductName('');
     setProductOwnerName('');

@@ -1,6 +1,8 @@
 import React from 'react';
 import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper } from '@mui/material';
 
+// Display data on page organized in a table with rows and columns
+
 function TableComponent({ data }) {
   return (
     <TableContainer component={Paper}>
