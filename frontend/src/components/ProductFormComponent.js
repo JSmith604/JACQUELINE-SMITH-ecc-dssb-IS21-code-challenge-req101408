@@ -17,23 +17,27 @@ function ProductFormComponent({ onAddEntry }) {
   // Handle form submission
   const handleSubmit = (e) => {
     e.preventDefault();
-    const formData = {
-      productName,
-      productOwnerName,
-      developers: developers.split(',').map(developer => developer.trim()),
-      scrumMasterName,
-      startDate,
-      methodology,
-      lifecycleState,
-      location,
-    };
-    
-    //Call the provided callback function to add the entry
-    onAddEntry(formData);
-    resetForm();
+  
+    const developerList = developers.split(',').map(developer => developer.trim());
+    if (developerList.length >= 1 && developerList.length <= 5) {
+      const formData = {
+        productName,
+        productOwnerName,
+        developers: developerList,
+        scrumMasterName,
+        startDate,
+        methodology,
+        lifecycleState,
+        location,
+      };
+      // Call the provided callback function to add the entry
+      onAddEntry(formData);
+      resetForm();
+    } else {
+      alert('Please enter 1-5 developers separated by commas');
+    }
   };
 
-  // Reset form fields
   const resetForm = () => {
     setProductName('');
     setProductOwnerName('');
